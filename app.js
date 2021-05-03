@@ -11,7 +11,7 @@ var expressLayouts = require('express-ejs-layouts'); // around line 6
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var stocksRouter = require('./routes/stocks') // around line 14
 var app = express();
 
 // view engine setup
@@ -26,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.use('/stocks', stocksRouter) // around line 41
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
